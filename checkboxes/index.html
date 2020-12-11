@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<title></title>
+<style>
+.container{
+margin: 100px 50px;
+font-size: 20px;
+}
+	
+</style>
+	</head>
+	<body>
+		<div class="container">
+			<input type="checkbox" class="checks" value="Apple" >A___<br>
+			<input type="checkbox" class="checks" value="Banana">B___<br>
+			<input type="checkbox" class="checks" value="Carrot">C___<br>
+			<br>
+			<a href="#" onclick="getValue();">Get Value</a>
+		</div>
+	<script >
+ function getValue(){
+
+  var checks = document.getElementsByClassName('checks');
+  var str = '';
+  
+  for(i=0; i < 3; i++){
+     if(checks[i].checked === true){
+     str += checks[i].value + " ";
+
+}
+  }
+alert(str);
+
+
+}
+
+	</script>
+	</body>
+</html>

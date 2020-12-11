@@ -1,0 +1,71 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="style.css">
+		<title></title>
+<style>
+.container{
+width: 400px;
+margin: 50px auto;
+}
+h1{
+	text-align: center;
+}
+li{
+	font-size: 20px;
+	background-color: whitesmoke;
+	margin-top:30px;
+	padding: 20px;
+}
+</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1>The 5 Mouseover</h1>
+			<br>
+			<ol>
+				<li onmouseover="changeColor(this)" onmouseout="changeColor(this)">Change text color</li>
+				<li onmouseover="changeColor(this,'skyblue')" onmouseout="changeColor(this,'whitesmoke')">Change background color</li>
+				<li onmouseover="changeText(this,'Hello!')" onmouseout="changeText(this,'Change text!')">Change text</li>
+				<li onmouseover="scaleUp(this,'30px')" onmouseout="scaleUp(this,'20px')">Scale Up!</li>
+				<li onmouseover="showSix()" onmouseout="showSix()">Show 6th row.</li>
+				<li id="six" style="background-color: lightgreen; visibility: hidden;">This is 6th</li>
+			</ol>
+		</div>
+	<script >
+	function changeColor(obj){
+		if(obj.style.color == 'orange'){
+			obj.style.color = 'black';
+		}else{
+			obj.style.color = 'orange';
+			}
+	}
+
+	function changeColor(obj,colorName){
+		obj.style.backgroundColor = colorName;
+	}
+
+	function changeText(obj,text){
+		obj.innerText = text;
+	}
+
+	function scaleUp(obj,text){
+		obj.style.fontSize = text;
+	}
+
+	function showSix(){
+		var element = document.querySelector('#six');
+//		console.log(element);
+		if(element.style.visibility == 'hidden'){
+			element.style.visibility = 'visible';
+		}
+		else{
+			element.style.visibility = 'hidden';
+		}
+	}
+
+	</script>
+	</body>
+</html>

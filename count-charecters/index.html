@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link 
+		rel="stylesheet" 
+  		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+    		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 
+		crossorigin="anonymous">
+		<title></title>
+<style>
+.container{
+	width: 500px;
+	margin-top:100px
+	font-size: 18px;
+}
+</style>
+	</head>
+	<body>
+		<div class="container">
+			<form>
+
+				<div class="form-group">
+					<label>Count Up!</label>
+					<textarea class="form-control" rows="5" onkeyup="count_up(this)"></textarea>
+					<span class="text muted pull-right" id="count1">0</span>
+				</div>
+
+				<br><br>
+
+				<div class="form-group">
+					<label>Count Down!</label>
+					<textarea onkeyup="count_down(this)" class="form-control" rows="5"></textarea>
+					<span class="text muted pull-right" id="count2">30</span>
+				</div>
+			</form>
+		</div>
+	<script>
+
+	function count_up(obj){
+		 document.getElementById('count1').innerHTML = obj.value.length;
+	}
+
+	function count_down(obj){
+
+		const elem = document.getElementById('count2')
+		elem.innerHTML = 30 - obj.value.length;
+
+		if(30 - obj.value.length  < 0){
+			document.getElementById('count2').style.color = 'red';
+		}else{
+			document.getElementById('count2').style.color = 'gray';
+		}
+	}
+
+
+	</script>
+	</body>
+</html>
